@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Storage</title>
+  </head>
+  <body> 
+    <h1>Session storage example</h1>
+    <h1>Counter : <span id="span1"></span></h1>
+    <button onclick="inc1()">INC</button>
+    <button onclick="dec1()">DEC</button>
+
+    <script>
+      var counter1;
+      if (window.sessionStorage.getItem("counter1")) {     //checking counter1
+        counter1 = window.sessionStorage.getItem("counter1");  //assign session storage to counter1
+      } else {
+        counter1 = 0;        
+      }
+
+      document.getElementById("span1").innerHTML = counter1; //displaying counter1 on UI
+
+      function inc1() {
+        counter1++;
+        document.getElementById("span1").innerHTML = counter1;
+        window.sessionStorage.setItem("counter1", counter1); //storing counter1 value in session storage.
+      }
+      function dec1() {
+        counter1--;
+        document.getElementById("span1").innerHTML = counter1;
+        window.sessionStorage.setItem("counter1", counter1); //storing counter1 value in session storage.
+      }
+    </script>
+
+
+    <h1>Local storage example</h1>
+    <h1>Counter : <span id="span2"></span></h1>
+    <button onclick="inc2()">INC</button>
+    <button onclick="dec2()">DEC</button>
+
+    <script>
+        var counter2 =0;
+        if(window.localStorage.getItem("counter2")){
+            counter2 = window.localStorage.getItem("counter2");
+        }
+        else{
+            counter = 0;
+        }
+        document.getElementById("span2").innerHTML = counter2;
+
+        function inc2(){
+            counter2++;
+            document.getElementById("span2").innerHTML = counter2;
+            window.localStorage.setItem("counter2",counter2);
+        }
+        function dec2(){
+            counter2--;
+            document.getElementById("span2").innerHTML = counter2;
+            window.localStorage.setItem("counter2",counter2);
+        }
+    </script>
+    
+  </body>
+</html>
