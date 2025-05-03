@@ -5,11 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Storage</title>
   </head>
-  <body> 
-    <h1>Session storage example</h1>
+  <style>
+    .container-1{
+      position: absolute;
+      top: 200px;
+      left: 600px;
+    }
+    .container-2{
+      position: absolute;
+      top: 400px;
+      left: 600px;
+    }
+  </style>
+  <body>
+    <div class="container-1">
+      <h1>Session storage example</h1>
     <h1>Counter : <span id="span1"></span></h1>
     <button onclick="inc1()">INC</button>
     <button onclick="dec1()">DEC</button>
+    </div>
 
     <script>
       var counter1;
@@ -33,11 +47,12 @@
       }
     </script>
 
-
-    <h1>Local storage example</h1>
+    <div class="container-2">
+      <h1>Local storage example</h1>
     <h1>Counter : <span id="span2"></span></h1>
     <button onclick="inc2()">INC</button>
     <button onclick="dec2()">DEC</button>
+    </div>
 
     <script>
         var counter2 =0;
